@@ -16,9 +16,9 @@ import java.io.IOException;
 // this class used to whenever user or manager access to admin pages or urls then this exception should thrown with custom message
 @Component
 @RequiredArgsConstructor
-public class CustomAccessDeniedException implements AccessDeniedHandler {
+public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
-    private ObjectMapper objectMapper; //  used to convert Java objects into JSON format
+    private final ObjectMapper objectMapper = new ObjectMapper(); //  used to convert Java objects into JSON format
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         Response errorResponse  = Response.builder()

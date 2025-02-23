@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegisterRequest {
 
-    @NotBlank(message = "Username is required")
-    private String username;
+    @NotBlank(message = "name is required")
+    private String name;
 
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")
@@ -28,5 +28,7 @@ public class RegisterRequest {
     @Pattern(regexp = "^[0-9]{10}$", message = "Invalid phone number format")
     private String phoneNumber;
 
-    private UserRole role;  // Example: ADMIN, USER
+    private UserRole role;  // Example: ADMIN, USER, MANAGER
+
+
 }

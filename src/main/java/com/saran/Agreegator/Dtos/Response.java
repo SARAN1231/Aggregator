@@ -1,44 +1,33 @@
 package com.saran.Agreegator.Dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.saran.Agreegator.Enums.UserRole;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor(force = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Response {
-    // generic
     private int status;
     private String message;
-
-    // for login
     private String token;
     private UserRole role;
     private String expiryDate;
 
-    // for outputs
     private UserDto user;
     private List<UserDto> users;
-
     private CategoryDto category;
     private List<CategoryDto> categories;
-
     private SubCategoryDto subCategory;
     private List<SubCategoryDto> subCategories;
-
     private ProductDto product;
     private List<ProductDto> products;
-
-    private final LocalDateTime timestamp = LocalDateTime.now();
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime timestamp = LocalDateTime.now();
 }
