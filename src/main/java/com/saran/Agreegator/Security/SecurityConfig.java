@@ -43,8 +43,6 @@ public class SecurityConfig {
         http.exceptionHandling(exception->exception.accessDeniedHandler(customAccessDeniedException).authenticationEntryPoint(customAuthenticationEntryPoint));//used to whenever user or manager access to admin pages or urls then this exception should thrown with custom message
         http.authorizeHttpRequests(request -> request
                 .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/users/**").hasAnyRole("ADMIN", "USER")
-
                         .anyRequest().authenticated()
         )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

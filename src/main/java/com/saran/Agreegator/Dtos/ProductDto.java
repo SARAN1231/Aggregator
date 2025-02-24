@@ -38,5 +38,5 @@ public class ProductDto {
 
     private Integer inventoryCount;
 
-    private Long subCategoryId;
+    private String subCategoryName;
 }

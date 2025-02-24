@@ -8,10 +8,10 @@ import com.saran.Agreegator.Models.User;
 
 public interface UserService {
 
-    public Response RegisterUser(RegisterRequest registerRequest);
-    public Response LoginUser(LoginRequest loginRequest);
-    public Response getAllUsers();
-    public User getCurrentLoggedInUser();
-    public Response UpdateUser(Long id, UserDto userDto);
-    public Response DeleteUser(Long id);
+     Response RegisterUser(RegisterRequest registerRequest);
+     Response LoginUser(LoginRequest loginRequest);
+     Response getAllUsers();
+     User getCurrentLoggedInUser();
+     Response UpdateUser(Long id, UserDto userDto);
+     Response DeleteUser(Long id);
 }

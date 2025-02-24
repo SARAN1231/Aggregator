@@ -18,6 +18,6 @@ public class SubCategoryDto {
     @NotBlank(message = "SubCategory name is required")
     private String name;
 
-    @NotNull(message = "Category ID is required")
-    private Long categoryId;
+    @NotBlank(message = "Category name is required")
+    private String categoryName;  // Instead of categoryId
 }
