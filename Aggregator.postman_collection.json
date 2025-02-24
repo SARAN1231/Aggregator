@@ -1,0 +1,760 @@
+{
+	"info": {
+		"_postman_id": "486f778f-95a0-4175-a68d-14454d7c8c02",
+		"name": "Aggregator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30775417"
+	},
+	"item": [
+		{
+			"name": "IMS",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"admin@123\",\r\n  \"phoneNumber\": \"9876563211\",\r\n  \"role\": \"ROLE_ADMIN\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "GetAllUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNzgxOSwiZXhwIjoxNzQxOTczMDE5fQ.E5Xv3gRxSuSkF3NwowZCUXX2ZM-owA5R59W0nsOFVoM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNzgxOSwiZXhwIjoxNzQxOTczMDE5fQ.E5Xv3gRxSuSkF3NwowZCUXX2ZM-owA5R59W0nsOFVoM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/delete/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzMjkzNSwiZXhwIjoxNzQxODg4MTM1fQ.gEl9Qtlqf2siiaAL7ishK6pqKqajzYQIOsV_lzRhiiY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"saran2\",\r\n  \"email\": \"saran2@example2.com\",\r\n  \"password\": \"SecurePass@1231\",\r\n  \"phoneNumber\": \"9876563210\",\r\n  \"role\": \"ROLE_ADMIN\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CurrentUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzMjkzNSwiZXhwIjoxNzQxODg4MTM1fQ.gEl9Qtlqf2siiaAL7ishK6pqKqajzYQIOsV_lzRhiiY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/current-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"current-user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "AddCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Snacks\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AllCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNzY3OSwiZXhwIjoxNzQxOTcyODc5fQ.XjVG69LGkoDEsBj1HUGe23pc7Es2lXHFQGbsuK_CH54",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/categories/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetbyId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNDgyOCwiZXhwIjoxNzQxODkwMDI4fQ.7HNG0fC92f6IwPwryqUUanHD6QWvBr7nMeZLcloJUkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/categories/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNDgyOCwiZXhwIjoxNzQxODkwMDI4fQ.7HNG0fC92f6IwPwryqUUanHD6QWvBr7nMeZLcloJUkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Mobiles\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/categories/update/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNDgyOCwiZXhwIjoxNzQxODkwMDI4fQ.7HNG0fC92f6IwPwryqUUanHD6QWvBr7nMeZLcloJUkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/categories/delete/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"categories",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SubCategory",
+					"item": [
+						{
+							"name": "Add SubCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Smartphones\",\r\n  \"categoryName\": \"Electronics\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/subcategories/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"subcategories",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetSubCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNzY3OSwiZXhwIjoxNzQxOTcyODc5fQ.XjVG69LGkoDEsBj1HUGe23pc7Es2lXHFQGbsuK_CH54",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/subcategories/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"subcategories",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNzI4OSwiZXhwIjoxNzQxODkyNDg5fQ.f3UqtlGZTL7LoP-CuwNSAFh3EGQ8rs5OfGI3cfaQUpY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/subcategories/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"subcategories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateSubCategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNzI4OSwiZXhwIjoxNzQxODkyNDg5fQ.f3UqtlGZTL7LoP-CuwNSAFh3EGQ8rs5OfGI3cfaQUpY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"sensors\",\r\n    \"categoryName\": \"Electronics\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/subcategories/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"subcategories",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Subcategory",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDMzNzU3MiwiZXhwIjoxNzQxODkyNzcyfQ.GdjllnccONmTa5xRgvEVM4DFvv4bpU12vsy-uLXNy8c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/subcategories/delete/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"subcategories",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Add Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Samsung Galaxy S23\",\r\n  \"barcode\": \"1234567890123\",\r\n  \"description\": \"Latest flagship smartphone with advanced features\",\r\n  \"mrpPrice\": 79999.99,\r\n  \"sellingPrice\": 74999.99,\r\n  \"quantity\": 50,\r\n  \"expiryDate\": \"2026-12-31\",\r\n  \"imageUrl\": \"https://example.com/images/samsung-galaxy-s23.jpg\",\r\n  \"inventoryCount\": 50,\r\n  \"subCategoryName\": \"Smartphones\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNzY3OSwiZXhwIjoxNzQxOTcyODc5fQ.XjVG69LGkoDEsBj1HUGe23pc7Es2lXHFQGbsuK_CH54",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/products/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getProductById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Samsung Galaxy S23\",\r\n  \"barcode\": \"1234567890123\",\r\n  \"description\": \"Latest flagship smartphone with advanced features\",\r\n  \"mrpPrice\": 79999.0,\r\n  \"sellingPrice\": 74999.0,\r\n  \"quantity\": 50,\r\n  \"expiryDate\": \"2026-12-31\",\r\n  \"imageUrl\": \"https://example.com/images/samsung-galaxy-s23.jpg\",\r\n  \"inventoryCount\": 50,\r\n  \"subCategoryName\": \"Smartphones\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbEBleGFtcGxlLmNvbSIsImlhdCI6MTc0MDQxNDg0NSwiZXhwIjoxNzQxOTcwMDQ1fQ.IiA55TIA_-Pb00ye4Qphi1MRKPILAtGxpj-kj-0dyO8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/products/delete/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

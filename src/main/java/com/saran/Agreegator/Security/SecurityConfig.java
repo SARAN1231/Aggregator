@@ -42,8 +42,14 @@ public class SecurityConfig {
         http.cors(Customizer.withDefaults());
         http.exceptionHandling(exception->exception.accessDeniedHandler(customAccessDeniedException).authenticationEntryPoint(customAuthenticationEntryPoint));//used to whenever user or manager access to admin pages or urls then this exception should thrown with custom message
         http.authorizeHttpRequests(request -> request
-                .requestMatchers("/api/auth/**").permitAll()
-                        .anyRequest().authenticated()
+                .requestMatchers(
+                        "/api/auth/**",
+                        "/v3/api-docs/**",        // OpenAPI JSON docs
+                        "/swagger-ui/**",         // Swagger UI static resources
+                        "/swagger-ui.html"        // Main Swagger UI page
+                        ).permitAll()
+
+                .anyRequest().authenticated()
         )
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
