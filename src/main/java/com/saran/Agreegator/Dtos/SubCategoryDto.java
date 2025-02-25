@@ -19,5 +19,5 @@ public class SubCategoryDto {
     private String name;
 
     @NotBlank(message = "Category name is required")
-    private String categoryName;  // Instead of categoryId
+    private String categoryName;  
 }
